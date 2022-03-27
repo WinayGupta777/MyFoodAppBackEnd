@@ -12,7 +12,8 @@ router.post("/signin",async (req,res)=>{
         if (obj.password==userdata.password) {
             res.send({
                 status:true,
-                message:"Authentication Successful"
+                message:"Authentication Successful",
+                username: obj.username
             });
         } else {
             res.send({status:false,message:"Incorrect Password"});

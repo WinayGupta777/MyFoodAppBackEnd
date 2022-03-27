@@ -16,7 +16,12 @@ router.post("/signup", async (req,res)=>{
     ));
 
     await createUser.save()
-    .then(()=>res.send({status:true,message:"Account created successfully"}))
+    .then(()=>res.send(
+        {
+            status:true,
+            message:"Account created successfully",
+            username: userdata.username          
+        }))
     .catch((err)=>{
         if(err.message.includes("E11000")){
             res.send({status:false,message:"This email is already exists"});
