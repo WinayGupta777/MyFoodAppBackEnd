@@ -1,3 +1,6 @@
+#Secure files
+/models/mongoConnection.json
+
 # dependencies
 /node_modules
 /.pnp
